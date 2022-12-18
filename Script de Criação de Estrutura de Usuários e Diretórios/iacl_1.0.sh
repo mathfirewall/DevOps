@@ -41,3 +41,34 @@ useradd rogerio -c "Rogério" -m -s /bin/bash -p $(openssl passwd -crypt Senha12
 
 sleep 2
 echo ""
+#atribuindo os usuários aos grupos
+echo "Adicionando Usuários aos seus grupos aguarde..."
+
+usermod -G GRP_ADM carlos
+usermod -G GRP_ADM maria
+usermod -G GRP_ADM joao
+
+usermod -G GRP_VEN debora
+usermod -G GRP_VEN sebastiana
+usermod -G GRP_VEN roberto
+
+usermod -G GRP_SEC josefina
+usermod -G GRP_SEC amanda
+usermod -G GRP_SEC rogerio
+
+sleep 2
+echo ""
+#atribuindo permissões aos diretórios
+echo "atribuindo permissão aos diretórios aguarde..."
+
+chown root:GRP_ADM adm
+chown root:GRP_VEN ven
+chown root:GRP_SEC sec
+
+chmod 770 adm
+chmod 770 ven
+chmod 770 sec
+chmod 777 public
+
+sleep 2
+echo "Finalizado....."
