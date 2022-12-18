@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Autor: Thiago Araújo
+# E-mail: thiagodevmobile@gmail.com
+# Linkedin: https://www.linkedin.com/in/thiago-4raujo/ 
 
 echo "         _______  _______  _______    _______          _________ _______  "
 echo "|\     /|(  ____ \(  ____ \(  ____ )  (  ___  )|\     /|\__   __/(  ___  )"
@@ -11,7 +14,8 @@ echo "| (___) |/\____) || (____/\| ) \ \__  | )   ( || (___) |   | |   | (___) |
 echo "(_______)\_______)(_______/|/   \__/  |/     \|(_______)   )_(   (_______)"
 echo "                                                                    1.1   "
 
-  GNU nano 4.8                                                            users_auto1.1.sh                                                                      resp="s"
+
+resp="s"
 while [ $resp == "s" ]
 do
         read -p "Nome Do Diretório a Ser Criado: " directory
