@@ -50,6 +50,7 @@ clear
 echo -e "Copiando os Arquivos para o Diretório Apache no /var/www/html Aguarde.....\n\n"
 cp /tmp/linux-site-dio-main/* /var/www/html
 cp -r /tmp/linux-site-dio-main/* /var/www/html
+rm -r /tmp/linux-site-dio-main
 echo -e "Sucesso !"
 sleep 2
 clear
