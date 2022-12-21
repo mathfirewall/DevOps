@@ -1,0 +1,45 @@
+version: "3.7"
+
+services:
+  web:
+    image: httpd
+    container_name: apache_web
+    ports:
+      - "4550:80"
+    volumes:
+      - /imagens/site:/usr/local/apache2/htdocs/
+    links:
+      - php
+    restart: always
+
+  php:
+    image: php:7.4-cli
+    container_name: php
+    ports:
+      - "6000:6000"
+    restart: always
+
+  mariadb:
+    image: mariadb:10.7
+    container_name: mariadb
+    hostname: mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: "Senha123"
+      MARIADB_USER: "root"
+      MARIADB_PASSWORD: "Senha123"
+      MYSQL_DATABASE: "db_jornada"
+
+    ports:
+      - "3306:3306"
+    volumes:
+      - /imagens/bd:/var/lib/mysql
+    restart: always
+
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      - PMA_ARBITRARY=1
+    ports:
+      - "8089:80"  
+    restart: always
